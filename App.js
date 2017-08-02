@@ -10,7 +10,7 @@ var studentList = [{ Name: "deb", Age: 36, Language: langKnown[langKnown.eng] },
 studentList.push(student);
 function GetStudentList(students) {
     students.forEach(function (element) {
-        console.log(element.name);
+        console.log(element.Name);
     });
 }
 GetStudentList(studentList);
@@ -32,4 +32,18 @@ var DisplayFullname = function (firstName, lastName) {
 DisplayFullname("deb", "jagadev");
 var DispayWifeFulleName = function (firstNameW, lastNameW) { return (console.log(firstNameW + "...." + lastNameW)); };
 DispayWifeFulleName("Prag", "Routaray");
+//******************classes/**************/////
+//define class and methods 
+var PersonalInfo = (function () {
+    function PersonalInfo(dl, state) {
+        this.dl = dl;
+        this.state = state;
+    }
+    PersonalInfo.prototype.GetPersonalInfo = function () {
+        return this.dl + "-" + this.state;
+    };
+    return PersonalInfo;
+}());
+var personalInfo = new PersonalInfo(12234, "NSW");
+console.log(personalInfo.GetPersonalInfo());
 //# sourceMappingURL=App.js.map

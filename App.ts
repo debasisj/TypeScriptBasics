@@ -1,4 +1,11 @@
 enum langKnown{eng, spanish, hindi}
+///////////Interface///////
+interface PersonInfo{
+    Name: string
+    Age:Number
+    Address: string
+    Language: langKnown
+}
 interface studentInfo{
     Name:string,
     Age: number,
@@ -10,7 +17,7 @@ let studentList:studentInfo[] = [{Name:"deb", Age:36, Language: langKnown[langKn
 studentList.push(student)
 function GetStudentList(students:any[]){
    students.forEach(element => {
-       console.log(element.name)
+       console.log(element.Name)
    });
 }
 GetStudentList(studentList);
@@ -30,3 +37,22 @@ DisplayFullname("deb", "jagadev");
 
 let DispayWifeFulleName = (firstNameW:string, lastNameW:string) =>{return(console.log(firstNameW+"...."+lastNameW))}
 DispayWifeFulleName("Prag","Routaray")
+
+//******************classes/**************/////
+
+//define class and methods 
+class PersonalInfo{
+
+
+    constructor(private dl,private state){
+
+    }
+
+    GetPersonalInfo():string{
+        return this.dl +"-"+this.state;
+    }
+}
+
+let personalInfo = new PersonalInfo(12234,"NSW");
+console.log(personalInfo.GetPersonalInfo());
+
